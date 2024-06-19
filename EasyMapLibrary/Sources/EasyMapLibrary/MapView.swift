@@ -10,9 +10,6 @@ import CoreLocation
 import MapKit
 import SwiftUI
 
-import SwiftUI
-import MapKit
-
 public struct MapView: View {
     
     @ObservedObject private var mapManager: MapManager

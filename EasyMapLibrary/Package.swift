@@ -9,17 +9,16 @@ let package = Package(
         .iOS(.v17),
     ],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "EasyMapLibrary",
             targets: ["EasyMapLibrary"]),
     ],
     targets: [
-           .target(
-               name: "EasyMapLibrary",
-               dependencies: []),
-           .testTarget(
-               name: "EasyMapLibraryTests",
-               dependencies: ["EasyMapLibrary"]),
-       ]
+        .target(
+            name: "EasyMapLibrary",
+            dependencies: []),
+        .testTarget(
+            name: "EasyMapLibraryTests",
+            dependencies: ["EasyMapLibrary"]),
+    ]
 )
