@@ -26,6 +26,29 @@ public struct MapView: View {
         
         ZStack {
             
+            mapView
+            
+            VStack {
+                
+                if showSearchField {
+                    searchField
+                }
+                Spacer()
+            }
+        }
+        .toolbarBackground(.hidden)
+        .sheet(isPresented: $showAddressSugestions, onDismiss: {
+            mapManager.address = selectedAddress
+        }) {
+            addressSuggestions
+        }
+    }
+    
+    @ViewBuilder
+    private var mapView: some View {
+        
+        VStack {
+            
             MapReader { proxy in
                 
                 Map(position: $mapManager.mapCameraPosition) {
@@ -59,17 +82,10 @@ public struct MapView: View {
                 MapCompass()
                 MapUserLocationButton()
             }
-        }
-        .ignoresSafeArea(edges: .all)
-        .toolbarBackground(.hidden)
-        .onAppear {
-            mapManager.requestLocationPermission()
-        }
-        .sheet(isPresented: $showAddressSugestions, onDismiss: {
-            mapManager.address = selectedAddress
-        }) {
-            addressSuggestions
-        }
+        }.ignoresSafeArea(edges: .all)
+            .onAppear {
+                mapManager.requestLocationPermission()
+            }
     }
     
     @ViewBuilder
