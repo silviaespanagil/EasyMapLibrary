@@ -127,6 +127,10 @@ Here's how the map looks.
 
 https://github.com/silviaespanagil/EasyMapLibrary/assets/81619759/b56a8dc5-b35d-4aa6-a076-08beff0e03fd
 
+## Currently working on...
+- Tests
+
+  
 ## Next updates
 - Colour customization
 
