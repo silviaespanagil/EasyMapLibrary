@@ -27,15 +27,15 @@ public class MapManager: NSObject, ObservableObject, MKLocalSearchCompleterDeleg
     
     public init(defaultLocation: CLLocationCoordinate2D) {
         
-            self.mapCameraPosition = .userLocation(
-                fallback: .camera(
-                    MapCamera(centerCoordinate: defaultLocation, distance: 1000)
-                )
+        self.mapCameraPosition = .userLocation(
+            fallback: .camera(
+                MapCamera(centerCoordinate: defaultLocation, distance: 1000)
             )
-            super.init()
-            configureSearchCompleter()
-            setupLocationUpdates()
-        }
+        )
+        super.init()
+        configureSearchCompleter()
+        setupLocationUpdates()
+    }
     
     // MARK: - Configuration Methods
     
@@ -71,10 +71,10 @@ public class MapManager: NSObject, ObservableObject, MKLocalSearchCompleterDeleg
     
     public func setDefaultLocation(to coordinate: CLLocationCoordinate2D) {
         
-            mapCameraPosition = .camera(
-                MapCamera(centerCoordinate: coordinate, distance: 1000)
-            )
-        }
+        mapCameraPosition = .camera(
+            MapCamera(centerCoordinate: coordinate, distance: 1000)
+        )
+    }
     
     // MARK: - Location permission methods
     public func requestLocationPermission() {
@@ -120,7 +120,7 @@ public class MapManager: NSObject, ObservableObject, MKLocalSearchCompleterDeleg
         }
     }
     
-    private func handleSearchResponse(_ item: MKMapItem) {
+    internal func handleSearchResponse(_ item: MKMapItem) {
         
         let coordinate = item.placemark.coordinate
         selectedCoordinate = coordinate
