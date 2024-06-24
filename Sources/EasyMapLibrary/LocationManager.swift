@@ -16,6 +16,8 @@ public class LocationManager: NSObject, ObservableObject, CLLocationManagerDeleg
     @Published public var lastKnownLocation: CLLocation?
     @Published public var locationError: Error?
     
+    private(set) var isUpdatingLocation = false
+    
     private let locationManager = CLLocationManager()
     private var locationUpdateHandler: ((CLLocationCoordinate2D) -> Void)?
     
@@ -37,12 +39,14 @@ public class LocationManager: NSObject, ObservableObject, CLLocationManagerDeleg
     public func startUpdatingLocation() {
         
         locationManager.startUpdatingLocation()
+        isUpdatingLocation = true
     }
     
     // Public method to stop updating location
     public func stopUpdatingLocation() {
         
         locationManager.stopUpdatingLocation()
+        isUpdatingLocation = false
     }
     
     // Public method to provide a closure for location updates
