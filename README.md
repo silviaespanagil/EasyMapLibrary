@@ -126,10 +126,6 @@ Here's how the map looks.
 <img src="https://github.com/silviaespanagil/EasyMapLibrary/assets/81619759/010ddb8d-5ff2-4dc5-9bdf-9fb6ffb47622" alt="" width="250"/>
 
 https://github.com/silviaespanagil/EasyMapLibrary/assets/81619759/b56a8dc5-b35d-4aa6-a076-08beff0e03fd
-
-## Currently working on...
-- Tests
-
   
 ## Next updates
 - Colour customization
